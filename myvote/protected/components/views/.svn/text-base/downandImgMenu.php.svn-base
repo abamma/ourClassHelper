@@ -1,0 +1,8 @@
+<ul>
+	<li><?php echo CHtml::link('下载添加', array('Download/create'));?></li>
+	<li><?php echo CHtml::link('下载管理', array('Download/admin'));?></li>
+	<li><?php echo CHtml::link('下载类型添加', array('FileType/create'));?></li>
+	<li><?php echo CHtml::link('下载类型管理', array('FileType/admin'));?></li>
+	<li><?php echo CHtml::link('宣传图片添加', array('ImgLib/create'));?></li>
+	<li><?php echo CHtml::link('宣传图片管理', array('ImgLib/admin'));?></li>
+</ul>

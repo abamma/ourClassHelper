@@ -1,0 +1,8 @@
+<ul>
+	<li><?php echo CHtml::link('状态添加', array('StatusType/create'));?></li>
+	<li><?php echo CHtml::link('状态管理', array('StatusType/admin'));?></li>
+	<li><?php echo CHtml::link('首页导航添加', array('NavMenu/create'));?></li>
+	<li><?php echo CHtml::link('首页导航管理', array('NavMenu/admin'));?></li>
+	<li><?php echo CHtml::link('首页背景图片添加', array('BgImage/create'));?></li>
+	<li><?php echo CHtml::link('首页背景图片管理', array('BgImage/admin'));?></li>
+</ul>
