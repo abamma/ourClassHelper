@@ -1,0 +1,13 @@
+
+Smarty/Smarty文件夹为Smarty模板引擎所有文件,Smarty文件夹下smarty_inc.php为smarty的配制文件。
+
+
+toupiao.sql是数据库文件，里面原有一些测试数据。
+
+conn.php   为数据库连接文件，可以在些页面修改数据连接密码。
+
+ztlist.php  管理投票列表，本系统支持多个投票,IP项为1时表示投票时1个IP一天只能投一次，登录为1表示登录后才能投票；
+
+tp.php?id=  用户投票页面，id为ztlist.php页显示的主题的序号。
+
+showtp.php?id=  查看用户投票结果页面，id为ztlist.php页显示的主题的序号。
