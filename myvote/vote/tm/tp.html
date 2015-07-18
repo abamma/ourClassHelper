@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>投票</title>
+		<style>
+			td {
+				background-color: #FFF;
+				font-size: 12px;
+			}
+			a {
+				text-decoration: none;
+				color: #666;
+			}
+		</style>
+		<link href="bootstrap.min.css" rel="stylesheet" />
+	</head>
+
+	<body class="container" background="bg.jpg">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2" style="margin-top: 5%;">
+				<div class="panel panel-primary">
+					<table class="table table-bordered table-hover">
+						<tr>
+							<div class="panel-heading" align="center">
+							<!--{$title}-->
+							</div>
+						</tr>
+						<form method="post">
+							<!--{section name=sec loop=$rows}-->
+							<tr align='left'>
+								<td>
+									<!--{$smarty.section.sec.index+1}-->、
+									<!--{$rows[sec].title}-->
+								</td>
+							</tr>
+
+							<tr>
+								<td align='center'>
+									<table width='90%' border='0' cellpadding='0' cellspacing='0'>
+										<tr>
+
+											<!--{section name=sec1 loop=$rows[sec].tpxx}-->
+
+											<td align='left'>
+												<!--{if $rows[sec].tpxx[sec1].wttype > 0}-->
+												<input name='wt_<!--{$smarty.section.sec.index+1}-->[]' type='checkbox' value='<!--{$rows[sec].tpxx[sec1].id}-->' />&nbsp;
+												<!--{else}-->
+												<input name='wt_<!--{$smarty.section.sec.index+1}-->[]' type='radio' value='<!--{$rows[sec].tpxx[sec1].id}-->' />&nbsp;
+												<!--{/if}-->
+												<!--{$rows[sec].tpxx[sec1].title}-->
+											</td>
+											<!--{/section}-->
+
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<!--{sectionelse}-->
+							<tr>
+								<td>暂时无数据</td>
+							</tr>
+							<!--{/section}-->
+							<tr>
+								<td align="center">
+									<input name="num" type="hidden" value="<!--{$rows|@count}-->" />
+									<input class="btn btn-success" name="ok" type="submit" value="提交" /> &nbsp;&nbsp;
+									<input class="btn btn-info" name="" type="button" onclick="window.open('showtp.php?id=<!--{$id}-->');" value="查看投票结果" />
+								</td>
+							</tr>
+							<!--smarty中用“$rows|@count”计算数组$rows的长度-->
+						</form>
+					</table>
+				</div>
+			</div>
+		</div>
+		<script src="jquery-2.1.4.min.js"></script>
+		<script src="bootstrap.min.js"></script>
+	</body>
+
+</html>
